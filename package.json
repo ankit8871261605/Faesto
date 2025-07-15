@@ -1,0 +1,26 @@
+{
+  "name": "feasto",
+  "version": "1.0.0",
+  "description": "A full-featured, modern food delivery application inspired by Swiggy and Zomato. This project connects restaurants, delivery partners, and users on a single platform for a seamless ordering and delivery experience.",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankit8871261605/Faesto.git"
+  },
+  "author": "Ankit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankit8871261605/Faesto/issues"
+  },
+  "homepage": "https://github.com/ankit8871261605/Faesto#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "reactdom": "^2.0.0"
+  }
+}
