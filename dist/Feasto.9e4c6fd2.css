@@ -1,0 +1,48 @@
+.header {
+  border: 1px solid #000;
+  justify-content: space-between;
+  display: flex;
+}
+
+.logo {
+  width: 200px;
+}
+
+.nav-items > ul {
+  font-size: 24px;
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-items > ul > li {
+  margin: 10px;
+  padding: 10px;
+}
+
+.restaurant-card {
+  background-color: #d3d3d3;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.restaurant-card:hover {
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+.search {
+  margin: 10px;
+  padding: 10px;
+}
+
+.restaurant-logo {
+  width: 100%;
+}
+
+.restaurant-container {
+  flex-wrap: wrap;
+  display: flex;
+}
+/*# sourceMappingURL=Feasto.9e4c6fd2.css.map */
