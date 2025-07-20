@@ -1883,43 +1883,43 @@ const restaurantList = [
                   }
                 ];
 
-const RestaurantCard = (props) => {
+const RestaurantCard = ({ restaurant }) => {
+  const { name, cuisines, avgRating, sla, cloudinaryImageId } = restaurant.info;
+
+  const img = cloudinaryImageId
+    ? cloudinaryImageId.startsWith("http")
+      ? cloudinaryImageId
+      : `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`
+    : "https://via.placeholder.com/150?text=No+Image";
+
   return (
     <div className="restaurant-card">
-        <img className="restaurant-logo" src={props.img} alt={props.name} />
-        <h3>{props.name}</h3>
-        <h4>{props.cuisine}</h4>
-        <h4>{props.rating}</h4>
-        <h4>{props.est_time}</h4>
+      <img className="restaurant-logo" src={img} alt={name} />
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating}</h4>
+      <h4>{sla.slaString}</h4>
     </div>
   );
-}
+};
+
 
 const Body = () => {
   return (
     <div className="body">
-        <div className="search">Search</div>
-        <div className="restaurant-container">
-          {restaurantList.map((restaurant) => (
-            <RestaurantCard
-              key={restaurant.info.id}
-              name={restaurant.info.name}
-              img={
-                restaurant.info.cloudinaryImageId
-                  ? restaurant.info.cloudinaryImageId.startsWith("http")
-                    ? restaurant.info.cloudinaryImageId
-                    : `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${restaurant.info.cloudinaryImageId}`
-                  : "https://via.placeholder.com/150?text=No+Image"
-              }
-              cuisine={restaurant.info.cuisines.join(", ")}
-              rating={restaurant.info.avgRating}
-              est_time={restaurant.info.sla.slaString}
-            />
-          ))}
-        </div>
+      <div className="search">Search</div>
+      <div className="restaurant-container">
+        {restaurantList.map((restaurant) => (
+          <RestaurantCard
+            key={restaurant.info.id}
+            restaurant={restaurant}
+          />
+        ))}
+      </div>
     </div>
   );
-}
+};
+
 
 const AppLayout = () => {
   return (

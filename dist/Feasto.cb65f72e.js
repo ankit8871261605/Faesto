@@ -2326,51 +2326,53 @@ const restaurantList = [
         }
     }
 ];
-const RestaurantCard = (props)=>{
+const RestaurantCard = ({ restaurant })=>{
+    const { name, cuisines, avgRating, sla, cloudinaryImageId } = restaurant.info;
+    const img = cloudinaryImageId ? cloudinaryImageId.startsWith("http") ? cloudinaryImageId : `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}` : "https://via.placeholder.com/150?text=No+Image";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "restaurant-card",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 className: "restaurant-logo",
-                src: props.img,
-                alt: props.name
+                src: img,
+                alt: name
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 1889,
-                columnNumber: 9
+                lineNumber: 1897,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: props.name
+                children: name
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 1890,
-                columnNumber: 9
+                lineNumber: 1898,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: props.cuisine
+                children: cuisines.join(", ")
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 1891,
-                columnNumber: 9
+                lineNumber: 1899,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: props.rating
+                children: avgRating
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 1892,
-                columnNumber: 9
+                lineNumber: 1900,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: props.est_time
+                children: sla.slaString
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 1893,
-                columnNumber: 9
+                lineNumber: 1901,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 1888,
+        lineNumber: 1896,
         columnNumber: 5
     }, undefined);
 };
@@ -2384,31 +2386,27 @@ const Body = ()=>{
                 children: "Search"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 1901,
-                columnNumber: 9
+                lineNumber: 1910,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "restaurant-container",
                 children: restaurantList.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
-                        name: restaurant.info.name,
-                        img: restaurant.info.cloudinaryImageId ? restaurant.info.cloudinaryImageId.startsWith("http") ? restaurant.info.cloudinaryImageId : `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${restaurant.info.cloudinaryImageId}` : "https://via.placeholder.com/150?text=No+Image",
-                        cuisine: restaurant.info.cuisines.join(", "),
-                        rating: restaurant.info.avgRating,
-                        est_time: restaurant.info.sla.slaString
+                        restaurant: restaurant
                     }, restaurant.info.id, false, {
                         fileName: "App.js",
-                        lineNumber: 1904,
-                        columnNumber: 13
+                        lineNumber: 1913,
+                        columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 1902,
-                columnNumber: 9
+                lineNumber: 1911,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 1900,
+        lineNumber: 1909,
         columnNumber: 5
     }, undefined);
 };
