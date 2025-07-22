@@ -24,6 +24,11 @@
 - named Export/import
     import {component} from "path"
 
+# React Hooks
+(Normal JS utility Functions)
+- useState() - superpowerfull state variables in react
+- useEffect()
+
 /** 
  * Header
  * - Logo
